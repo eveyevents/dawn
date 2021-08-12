@@ -23,7 +23,7 @@ class ProductForm extends HTMLElement {
       ...(this.form.elements['properties[_event_id]'] ? {
       	properties: {
           _event_id: this.form.elements['properties[_event_id]'].value,
-          Event: this.form.elements['properties[Event]'].value,
+          Event: document.querySelector('input[name="properties[Event]"]') && document.querySelector('input[name="properties[Event]"]').value,
       	},
 	  }),
     });
