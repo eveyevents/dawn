@@ -25,7 +25,7 @@ class ProductForm extends HTMLElement {
           _event_id: this.form.elements['properties[_event_id]'].value,
           Event: document.querySelector('input[name="properties[Event]"]').value,
       	},
-	  }),
+      } : {}),
     });
 
     fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
