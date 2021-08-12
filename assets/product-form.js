@@ -20,10 +20,12 @@ class ProductForm extends HTMLElement {
       ...JSON.parse(serializeForm(this.form)),
       sections: this.cartNotification.getSectionsToRender().map((section) => section.id),
       sections_url: window.location.pathname,
-      properties: {
-        _event_id: this.form.elements['properties[_event_id]'].value,
-        Event: this.form.elements['properties[Event]'].value,
-      },
+      ...(this.form.elements['properties[_event_id]'] ? {
+      	properties: {
+          _event_id: this.form.elements['properties[_event_id]'].value,
+          Event: this.form.elements['properties[Event]'].value,
+      	},
+	  }),
     });
 
     fetch(`${routes.cart_add_url}`, { ...fetchConfig('javascript'), body })
