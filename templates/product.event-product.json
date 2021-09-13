@@ -25,7 +25,7 @@
         "a6abadf9-a2a6-4116-81ee-66acaa7fd824": {
           "type": "custom_liquid",
           "settings": {
-            "custom_liquid": "Location: {{ product.metafields.evey.event }}"
+            "custom_liquid": "Location: {{ product.metafields.evey.event.location }}"
           }
         },
         "price": {
